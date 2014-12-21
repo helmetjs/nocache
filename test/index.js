@@ -19,7 +19,7 @@ describe('nocache', function () {
 
   it('sets headers properly', function (done) {
     request(app).get('/')
-    .expect('Cache-Control', 'no-store, no-cache')
+    .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
     .expect('Pragma', 'no-cache')
     .expect('Expires', '0')
     .end(done);
@@ -34,7 +34,7 @@ describe('nocache', function () {
     app.use(nocache({ noEtag: true }));
     app.use(helloWorld);
     request(app).get('/')
-    .expect('Cache-Control', 'no-store, no-cache')
+    .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
     .expect('Pragma', 'no-cache')
     .expect('Expires', '0')
     .end(function (err, res) {
