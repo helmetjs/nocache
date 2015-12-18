@@ -4,19 +4,14 @@ var assert = require('assert')
 var connect = require('connect')
 var request = require('supertest')
 
-function helloWorld (req, res) {
-  res.end('Hello world!')
-}
-
 describe('nocache', function () {
-  var app
-  beforeEach(function () {
-    app = connect()
-    app.use(nocache())
-    app.use(helloWorld)
-  })
-
   it('sets headers properly', function (done) {
+    var app = connect()
+    app.use(nocache())
+    app.use(function (req, res) {
+      res.end('Hello world!')
+    })
+
     request(app).get('/')
       .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
       .expect('Pragma', 'no-cache')
@@ -25,13 +20,16 @@ describe('nocache', function () {
   })
 
   it('can be told to squash etags', function (done) {
-    app = connect()
+    var app = connect()
     app.use(function (req, res, next) {
       res.setHeader('ETag', 'abc123')
       next()
     })
     app.use(nocache({ noEtag: true }))
-    app.use(helloWorld)
+    app.use(function (req, res) {
+      res.end('Hello world!')
+    })
+
     request(app).get('/')
       .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
       .expect('Pragma', 'no-cache')
