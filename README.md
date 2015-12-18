@@ -10,7 +10,12 @@ var nocache = require('nocache')
 app.use(nocache())
 ```
 
-This will set `Cache-Control` and `Pragma` headers to stop caching. It will also set an `Expires` header of 0, effectively saying "this has already expired."
+This sets four headers, disabling a lot of browser caching:
+
+- `Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate`
+- `Pragma: no-cache`
+- `Expires: 0`
+- `Surrogate-Control: no-store`
 
 If you want to crush the `ETag` header as well, you can:
 
@@ -18,4 +23,4 @@ If you want to crush the `ETag` header as well, you can:
 app.use(nocache({ noEtag: true }))
 ```
 
-Caching has some real benefits, and you lose them here. Browsers won't cache resources with this enabled, although *some* performance is retained if you keep ETag support. It's also possible that you'll introduce *new* bugs and you'll wish people had old resources cached, but that's less likely.
+Caching has some real benefits, and you lose many of them here. Browsers won't cache resources with this enabled, although *some* performance is retained if you keep ETag support. It's also possible that you'll introduce *new* bugs and you'll wish people had old resources cached, but that's less likely.
