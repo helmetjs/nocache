@@ -17,11 +17,11 @@ describe('nocache', function () {
     })
 
     request(app).get('/')
-      .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
-      .expect('Pragma', 'no-cache')
-      .expect('Expires', '0')
-      .expect('ETag', 'abc123')
-      .end(done)
+    .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+    .expect('Pragma', 'no-cache')
+    .expect('Expires', '0')
+    .expect('ETag', 'abc123')
+    .end(done)
   })
 
   it('can be told to squash etags', function (done) {
@@ -36,17 +36,14 @@ describe('nocache', function () {
     })
 
     request(app).get('/')
-      .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
-      .expect('Pragma', 'no-cache')
-      .expect('Expires', '0')
-      .end(function (err, res) {
-        if (err) {
-          done(err)
-          return
-        }
-        assert.equal(res.header.etag, undefined)
-        done()
-      })
+    .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
+    .expect('Pragma', 'no-cache')
+    .expect('Expires', '0')
+    .end(function (err, res) {
+      if (err) { return done(err) }
+      assert.equal(res.header.etag, undefined)
+      done()
+    })
   })
 
   it('names its function and middleware', function () {
