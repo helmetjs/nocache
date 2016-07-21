@@ -22,7 +22,8 @@
   },
   "bugs": "https://github.com/helmetjs/nocache/issues",
   "scripts": {
-    "test": "standard && mocha"
+    "pretest": "standard",
+    "test": "mocha"
   },
   "devDependencies": {
     "connect": "^3.4.0",
