@@ -19,10 +19,4 @@ This sets four headers, disabling a lot of browser caching:
 - `Expires: 0`
 - `Surrogate-Control: no-store`
 
-If you want to crush the `ETag` header as well, you can:
-
-```javascript
-app.use(nocache({ noEtag: true }))
-```
-
-Caching has some real benefits, and you lose many of them here. Browsers won't cache resources with this enabled, although *some* performance is retained if you keep ETag support. It's also possible that you'll introduce *new* bugs and you'll wish people had old resources cached, but that's less likely.
+Caching has some real benefits, and you lose many of them here. Browsers won't cache resources with this enabled. It's also possible that you'll introduce *new* bugs and you'll wish people had old resources cached, but that's less likely.
