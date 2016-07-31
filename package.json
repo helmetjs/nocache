@@ -36,8 +36,5 @@
       "describe",
       "it"
     ]
-  },
-  "dependencies": {
-    "depd": "1.1.0"
   }
 }
