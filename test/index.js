@@ -22,6 +22,7 @@ describe('nocache', function () {
     .expect('Pragma', 'no-cache')
     .expect('Expires', '0')
     .expect('ETag', 'abc123')
+    .expect('Hello world!')
     .end(done)
   })
 
