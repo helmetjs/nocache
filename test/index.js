@@ -17,6 +17,7 @@ describe('nocache', function () {
     })
 
     request(app).get('/')
+    .expect('Surrogate-Control', 'no-store')
     .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
     .expect('Pragma', 'no-cache')
     .expect('Expires', '0')
