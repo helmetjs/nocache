@@ -17,33 +17,13 @@ describe('nocache', function () {
     })
 
     request(app).get('/')
+    .expect('Surrogate-Control', 'no-store')
     .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
     .expect('Pragma', 'no-cache')
     .expect('Expires', '0')
     .expect('ETag', 'abc123')
+    .expect('Hello world!')
     .end(done)
-  })
-
-  it('can be told to squash etags', function (done) {
-    var app = connect()
-    app.use(function (req, res, next) {
-      res.setHeader('ETag', 'abc123')
-      next()
-    })
-    app.use(nocache({ noEtag: true }))
-    app.use(function (req, res) {
-      res.end('Hello world!')
-    })
-
-    request(app).get('/')
-    .expect('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate')
-    .expect('Pragma', 'no-cache')
-    .expect('Expires', '0')
-    .end(function (err, res) {
-      if (err) { return done(err) }
-      assert.equal(res.header.etag, undefined)
-      done()
-    })
   })
 
   it('names its function and middleware', function () {
