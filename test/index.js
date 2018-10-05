@@ -26,7 +26,7 @@ describe('nocache', function () {
   })
 
   it('names its function and middleware', function () {
-    assert.equal(nocache.name, 'nocache')
-    assert.equal(nocache().name, 'nocache')
+    assert.strictEqual(nocache.name, 'nocache')
+    assert.strictEqual(nocache().name, 'nocache')
   })
 })
