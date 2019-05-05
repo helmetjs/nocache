@@ -2,6 +2,7 @@
 
 ## Unreleased
 ### Added
+- Added TypeScript type definitions. See [#17](https://github.com/helmetjs/nocache/issues/17) and [helmetjs/helmet#188](https://github.com/helmetjs/helmet/issues/188)
 - Created a changelog
 
 ### Changed
