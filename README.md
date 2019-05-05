@@ -1,7 +1,6 @@
 Middleware to turn off caching
 ==============================
 [![Build Status](https://travis-ci.org/helmetjs/nocache.svg?branch=master)](https://travis-ci.org/helmetjs/nocache)
-[![js-standard-style](https://img.shields.io/badge/code%20style-standard-brightgreen.svg)](http://standardjs.com/)
 
 It's possible that you've got bugs in an old HTML or JavaScript file, and with a cache, some users will be stuck with those old versions. This will (try to) abolish all client-side caching.
 
