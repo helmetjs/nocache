@@ -2,7 +2,7 @@ import connect from 'connect';
 import request from 'supertest';
 import { IncomingMessage, ServerResponse } from 'http';
 
-import nocache = require('..')
+import nocache = require('..');
 
 describe('nocache', () => {
   it('sets headers properly', () => {
