@@ -1,5 +1,15 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Updated documentation
+
+### Removed
+
+- Dropped support for old Node versions. Node 12+ is now required
+
 ## 2.1.0 - 2019-05-05
 
 ### Added

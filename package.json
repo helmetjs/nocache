@@ -26,7 +26,7 @@
     "email": "me@evanhahn.com"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=12.0.0"
   },
   "main": "./dist/index.js",
   "typings": "./dist/index.d.ts",
