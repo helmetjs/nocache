@@ -1,7 +1,5 @@
 # Middleware to turn off caching
 
-[![Build Status](https://travis-ci.org/helmetjs/nocache.svg?branch=master)](https://travis-ci.org/helmetjs/nocache)
-
 This Express middleware sets some HTTP response headers to try to disable client-side caching.
 
 To use it:
