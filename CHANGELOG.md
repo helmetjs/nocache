@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Fixed `homepage` metadata
+
 ## 3.0.0 - 2021-06-03
 
 ### Changed

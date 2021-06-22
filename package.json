@@ -16,7 +16,7 @@
     "caching",
     "cache"
   ],
-  "homepage": "https://helmetjs.github.io/docs/nocache/",
+  "homepage": "https://github.com/helmetjs/nocache",
   "repository": {
     "type": "git",
     "url": "git://github.com/helmetjs/nocache.git"
