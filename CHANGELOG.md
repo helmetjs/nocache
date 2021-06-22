@@ -5,6 +5,7 @@
 ### Changed
 
 - Fixed `homepage` metadata
+- Removed some extraneous keywords
 
 ## 3.0.0 - 2021-06-03
 
