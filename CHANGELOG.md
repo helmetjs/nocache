@@ -1,6 +1,6 @@
 # Changelog
 
-## Unreleased
+## 3.0.2 - 2022-03-22
 
 ### Changed
 
