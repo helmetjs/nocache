@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Shrunk package size slightly
+
 ## 3.0.1 - 2021-06-22
 
 ### Changed
