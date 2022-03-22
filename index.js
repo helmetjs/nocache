@@ -1,11 +1,5 @@
-import { IncomingMessage, ServerResponse } from "http";
-
-export = function nocache() {
-  return function nocache(
-    _req: IncomingMessage,
-    res: ServerResponse,
-    next: () => void
-  ) {
+module.exports = function nocache() {
+  return function nocache(_req, res, next) {
     res.setHeader("Surrogate-Control", "no-store");
     res.setHeader(
       "Cache-Control",

@@ -1,18 +1,17 @@
-import connect from "connect";
-import request from "supertest";
-import { IncomingMessage, ServerResponse } from "http";
+const connect = require("connect");
+const request = require("supertest");
 
-import nocache = require("..");
+const nocache = require("..");
 
 describe("nocache", () => {
   it("sets headers properly", () => {
     const app = connect();
-    app.use((_req: IncomingMessage, res: ServerResponse, next: () => void) => {
+    app.use((req, res, next) => {
       res.setHeader("ETag", "abc123");
       next();
     });
     app.use(nocache());
-    app.use((_req: IncomingMessage, res: ServerResponse) => {
+    app.use((req, res) => {
       res.end("Hello world!");
     });
 
