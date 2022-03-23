@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Changed
+
+- Fixed TypeScript regression. See [#21](https://github.com/helmetjs/nocache/issues/21)
+
 ## 3.0.2 - 2022-03-22
 
 ### Changed

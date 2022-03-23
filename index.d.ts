@@ -1,6 +1,6 @@
 import { IncomingMessage, ServerResponse } from "http";
 
-declare function nocache(): (
+declare const nocache: () => (
   _req: IncomingMessage,
   res: ServerResponse,
   next: () => void
