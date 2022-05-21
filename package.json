@@ -28,13 +28,6 @@
   },
   "main": "index.js",
   "typings": "index.d.ts",
-  "files": [
-    "CHANGELOG.md",
-    "LICENSE",
-    "README.md",
-    "index.js",
-    "index.d.ts"
-  ],
   "scripts": {
     "pretest": "npm run lint",
     "lint": "npm run lint:eslint && npm run lint:prettier",
