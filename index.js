@@ -1,5 +1,5 @@
 module.exports = function nocache() {
-  return function nocache(req, res, next) {
+  return function nocache(_, res, next) {
     res.setHeader("Surrogate-Control", "no-store");
     res.setHeader(
       "Cache-Control",
