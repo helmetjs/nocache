@@ -6,6 +6,10 @@
 
 - Shrunk package size slightly
 
+### Removed
+
+- Removed changelog from built package
+
 ## 3.0.3 - 2022-03-23
 
 ### Changed

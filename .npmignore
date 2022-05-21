@@ -1,7 +1,6 @@
 # This is an alternative to `package.json`'s `files`.
 # This method shrinks the final tarball by ~21 bytes.
 *
-!CHANGELOG.md
 !LICENSE
 !README.md
 !index.js
