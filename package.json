@@ -45,8 +45,8 @@
   },
   "devDependencies": {
     "connect": "^3.7.0",
-    "eslint": "^8.11.0",
-    "prettier": "^2.6.0",
-    "supertest": "^6.2.2"
+    "eslint": "^8.16.0",
+    "prettier": "^2.6.2",
+    "supertest": "^6.2.3"
   }
 }
