@@ -5,7 +5,7 @@
     "Evan Hahn <me@evanhahn.com> (https://evanhahn.com)"
   ],
   "description": "Middleware to destroy caching",
-  "version": "3.0.3",
+  "version": "3.0.4",
   "license": "MIT",
   "keywords": [
     "express",
