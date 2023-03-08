@@ -1,37 +1,34 @@
 const assert = require("assert");
-const connect = require("connect");
-const request = require("supertest");
 
 const nocache = require(".");
 
-async function main() {
-  const app = connect();
-  app.use((req, res, next) => {
-    res.setHeader("ETag", "abc123");
-    next();
-  });
-  app.use(nocache());
-  app.use((req, res) => {
-    res.end("Hello world!");
-  });
+const fakeRequest = {};
 
-  await request(app)
-    .get("/")
-    .expect("Surrogate-Control", "no-store")
-    .expect(
-      "Cache-Control",
-      "no-store, no-cache, must-revalidate, proxy-revalidate"
-    )
-    .expect("Pragma", "no-cache")
-    .expect("Expires", "0")
-    .expect("ETag", "abc123")
-    .expect("Hello world!");
+const fakeResponse = {
+  headers: new Map(),
+  setHeader(name, value) {
+    this.headers.set(name, value);
+  },
+};
 
-  assert.strictEqual(nocache.name, "nocache");
-  assert.strictEqual(nocache().name, "nocache");
-}
+let wasNextCalled = false;
+const fakeNext = (...args) => {
+  wasNextCalled = true;
+  assert.strictEqual(args.length, 0);
+};
 
-main().catch((err) => {
-  console.error(err);
-  process.exit(1);
-});
+nocache()(fakeRequest, fakeResponse, fakeNext);
+
+assert.deepStrictEqual(
+  fakeResponse.headers,
+  new Map([
+    ["Surrogate-Control", "no-store"],
+    ["Cache-Control", "no-store, no-cache, must-revalidate, proxy-revalidate"],
+    ["Pragma", "no-cache"],
+    ["Expires", "0"],
+  ])
+);
+assert(wasNextCalled);
+
+assert.strictEqual(nocache.name, "nocache");
+assert.strictEqual(nocache().name, "nocache");
