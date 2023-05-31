@@ -12,10 +12,9 @@ const nocache = require("nocache");
 app.use(nocache());
 ```
 
-This sets four headers, disabling a lot of browser caching:
+This sets three headers, disabling a lot of browser caching:
 
 - `Cache-Control: no-store, no-cache, must-revalidate, proxy-revalidate`
-- `Pragma: no-cache`
 - `Expires: 0`
 - `Surrogate-Control: no-store`
 
