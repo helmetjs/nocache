@@ -6,14 +6,6 @@
 
 - Dropped support for Pragma header
 
-### Changed
-
-- Shrunk package size slightly
-
-### Removed
-
-- Removed changelog from built package
-
 ## 3.0.4 - 2022-05-21
 
 ### Changed
