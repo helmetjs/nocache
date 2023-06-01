@@ -1,5 +1,11 @@
 # Changelog
 
+## Unreleased
+
+### Removed
+
+- Breaking: dropped `Pragma` header. See [#26](https://github.com/helmetjs/nocache/pull/26)
+
 ## 3.0.4 - 2022-05-21
 
 ### Changed
