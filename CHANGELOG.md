@@ -5,6 +5,7 @@
 ### Removed
 
 - Breaking: dropped `Pragma` header. See [#26](https://github.com/helmetjs/nocache/pull/26)
+- Breaking: dropped support for Node 14 and 15. Node 16+ is now required
 
 ## 3.0.4 - 2022-05-21
 
