@@ -37,7 +37,8 @@
     "test": "node test"
   },
   "devDependencies": {
-    "eslint": "^8.44.0",
+    "@eslint/js": "^10.0.1",
+    "eslint": "^10.1.0",
     "prettier": "^3.0.0"
   }
 }
