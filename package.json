@@ -17,7 +17,7 @@
   "homepage": "https://github.com/helmetjs/nocache",
   "repository": {
     "type": "git",
-    "url": "git://github.com/helmetjs/nocache.git"
+    "url": "git+https://github.com/helmetjs/nocache.git"
   },
   "bugs": {
     "url": "https://github.com/helmetjs/nocache/issues",
